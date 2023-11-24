@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "author": "644659124 Mr. Rachata Liabdee",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-led-bar-graph",
+      "id": "bargraph1",
+      "top": -114.32,
+      "left": -87.34,
+      "rotate": 180,
+      "attrs": { "color": "GYR" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -162.21,
+      "left": -90.54,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -5.65,
+      "left": -172.8,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot2",
+      "top": 273.8,
+      "left": 18.2,
+      "attrs": { "travelLength": "30" }
+    },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 28.8, "left": -139.16, "attrs": {} }
+  ],
+  "connections": [
+    [ "bargraph1:C1", "bargraph1:C2", "black", [ "v0" ] ],
+    [ "bargraph1:C3", "bargraph1:C4", "black", [ "h0" ] ],
+    [ "bargraph1:C5", "bargraph1:C6", "black", [ "h0" ] ],
+    [ "bargraph1:C7", "bargraph1:C8", "black", [ "h0" ] ],
+    [ "bargraph1:C9", "bargraph1:C10", "black", [ "h0" ] ],
+    [ "bargraph1:C9", "bargraph1:C8", "black", [ "h0" ] ],
+    [ "bargraph1:C7", "bargraph1:C6", "black", [ "h0" ] ],
+    [ "bargraph1:C5", "bargraph1:C4", "black", [ "h0" ] ],
+    [ "bargraph1:C3", "bargraph1:C2", "black", [ "h0" ] ],
+    [ "bargraph1:A10", "bargraph1:A9", "green", [ "h0" ] ],
+    [ "bargraph1:A8", "bargraph1:A7", "green", [ "h0" ] ],
+    [ "bargraph1:A6", "bargraph1:A5", "green", [ "h0" ] ],
+    [ "bargraph1:A4", "bargraph1:A3", "green", [ "h0" ] ],
+    [ "bargraph1:A2", "bargraph1:A1", "green", [ "h0" ] ],
+    [ "bargraph1:C10", "led1:C", "black", [ "v-15.16", "h7.18" ] ],
+    [ "r1:1", "bargraph1:C1", "black", [ "v-0.48", "h-41.18" ] ],
+    [ "bargraph1:A1", "esp:17", "green", [ "h44.54", "v157.52" ] ],
+    [ "bargraph1:A3", "esp:16", "green", [ "h44.54", "v205.52" ] ],
+    [ "bargraph1:A5", "esp:4", "green", [ "h44.54", "v234.33" ] ],
+    [ "bargraph1:A7", "esp:2", "green", [ "h44.54", "v272.73", "h-9.6" ] ],
+    [ "esp:34", "pot2:SIG", "green", [ "h-38.25", "v230.4" ] ],
+    [ "bargraph1:A9", "esp:15", "green", [ "h44.54", "v301.53", "h-9.6" ] ],
+    [ "led1:A", "esp:18", "red", [ "v-4.59", "h55.94", "v249.6" ] ],
+    [ "r1:1", "esp:GND.1", "black", [ "v0" ] ],
+    [ "pot2:GND", "esp:GND.3", "black", [ "v-48", "h-263.6", "v-153.6", "h-28.8" ] ],
+    [ "pot2:VCC", "esp:3V3", "red", [ "h-220.8", "v-28.8" ] ]
+  ],
+  "dependencies": {}
+}
